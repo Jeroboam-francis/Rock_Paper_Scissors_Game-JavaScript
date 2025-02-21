@@ -1,0 +1,135 @@
+/* Import a retro-style font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset default margin, padding, and set box-sizing for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up the main body styling */
+body {
+    font-family: "Press Start 2P", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main container for the score display and game elements */
+.scores-container {
+    background-color: #9aca0b;
+    width: 100%;
+    max-width: 700px;
+    min-height: 100vh;
+    padding: clamp(0.5rem, 3vw, 1rem);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for buttons inside the scores container */
+.scores-container button {
+    font-size: clamp(2rem, 5vw, 5rem);
+    border-radius: 10px;
+    border: 2px solid rgba(240, 240, 240, 1);
+    margin: clamp(5px, 1vw, 10px);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Container for game choices (e.g., Rock, Paper, Scissors) */
+#choices {
+    margin: 5px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Header section displaying scores and game title */
+.scores-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+}
+
+/* Displays for player and computer choices */
+#playerDisplay, #computerDisplay {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Result display section */
+#resultDisplay {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    margin: clamp(1rem, 2vw, 1.5rem) 0;
+    text-align: center;
+    background-color: #f5d057;
+    height: clamp(2.5rem, 6vw, 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Label for emoji-based game choices */
+.emoji-label {
+    font-size: clamp(12px, 3vw, 16px);
+    margin-left: 5px;
+    vertical-align: middle;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+/* Styles for both player and computer choice sections */
+.computer, .player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed black;
+    height: clamp(80px, 20vw, 120px);
+    width: clamp(80px, 20vw, 120px);
+    margin: clamp(10px, 3vw, 20px) auto;
+    font-size: clamp(3rem, 8vw, 5rem);
+    padding: clamp(5px, 2vw, 10px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 480px) {
+    .scores-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .scores-container button {
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    .scores-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Additional responsiveness for very small screens */
+@media screen and (max-width: 320px) {
+    .scores-container button {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .computer, .player {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
